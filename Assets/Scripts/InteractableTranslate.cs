@@ -30,8 +30,6 @@ public class InteractableTranslate : InteractableBase
             return;
 
         _startPoint = _transform.position;
-
-        _endTransform.gameObject.SetActive(false);
         _endPoint = _endTransform.position;
 
         _translateDirection = (_endPoint - _startPoint).normalized;
@@ -46,7 +44,7 @@ public class InteractableTranslate : InteractableBase
         {
             _attachedOffset = _attachechedInteractable.transform.localPosition;
 
-            _attachechedInteractable.transform.parent = null;
+            _attachechedInteractable.transform.parent = _transform.parent;
         }
     }
 
